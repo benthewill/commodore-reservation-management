@@ -1,0 +1,1551 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+interface Node {
+    "Retrieves a record by `ID`"
+    nodeId: ID!
+}
+
+"The root type for creating and mutating data"
+type Mutation {
+    "Deletes zero or more records from the `bowling_lane_pricing` collection"
+    deleteFrombowling_lane_pricingCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: bowling_lane_pricingFilter
+    ): bowling_lane_pricingDeleteResponse!
+    "Deletes zero or more records from the `bowling_lanes` collection"
+    deleteFrombowling_lanesCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: bowling_lanesFilter
+    ): bowling_lanesDeleteResponse!
+    "Deletes zero or more records from the `guests` collection"
+    deleteFromguestsCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: guestsFilter
+    ): guestsDeleteResponse!
+    "Deletes zero or more records from the `guests_companies` collection"
+    deleteFromguests_companiesCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: guests_companiesFilter
+    ): guests_companiesDeleteResponse!
+    "Deletes zero or more records from the `guests_companies_contacts_information` collection"
+    deleteFromguests_companies_contacts_informationCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: guests_companies_contacts_informationFilter
+    ): guests_companies_contacts_informationDeleteResponse!
+    "Deletes zero or more records from the `guests_contacts_information` collection"
+    deleteFromguests_contacts_informationCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: guests_contacts_informationFilter
+    ): guests_contacts_informationDeleteResponse!
+    "Deletes zero or more records from the `lane_reservation_entries` collection"
+    deleteFromlane_reservation_entriesCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: lane_reservation_entriesFilter
+    ): lane_reservation_entriesDeleteResponse!
+    "Deletes zero or more records from the `lane_reservation_entries_logs` collection"
+    deleteFromlane_reservation_entries_logsCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: lane_reservation_entries_logsFilter
+    ): lane_reservation_entries_logsDeleteResponse!
+    "Deletes zero or more records from the `lane_reservations` collection"
+    deleteFromlane_reservationsCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: lane_reservationsFilter
+    ): lane_reservationsDeleteResponse!
+    "Deletes zero or more records from the `lane_reservations_payments` collection"
+    deleteFromlane_reservations_paymentsCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: lane_reservations_paymentsFilter
+    ): lane_reservations_paymentsDeleteResponse!
+    "Deletes zero or more records from the `staffs` collection"
+    deleteFromstaffsCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: staffsFilter
+    ): staffsDeleteResponse!
+    "Adds one or more `bowling_lane_pricing` records to the collection"
+    insertIntobowling_lane_pricingCollection(objects: [bowling_lane_pricingInsertInput!]!): bowling_lane_pricingInsertResponse
+    "Adds one or more `bowling_lanes` records to the collection"
+    insertIntobowling_lanesCollection(objects: [bowling_lanesInsertInput!]!): bowling_lanesInsertResponse
+    "Adds one or more `guests` records to the collection"
+    insertIntoguestsCollection(objects: [guestsInsertInput!]!): guestsInsertResponse
+    "Adds one or more `guests_companies` records to the collection"
+    insertIntoguests_companiesCollection(objects: [guests_companiesInsertInput!]!): guests_companiesInsertResponse
+    "Adds one or more `guests_companies_contacts_information` records to the collection"
+    insertIntoguests_companies_contacts_informationCollection(objects: [guests_companies_contacts_informationInsertInput!]!): guests_companies_contacts_informationInsertResponse
+    "Adds one or more `guests_contacts_information` records to the collection"
+    insertIntoguests_contacts_informationCollection(objects: [guests_contacts_informationInsertInput!]!): guests_contacts_informationInsertResponse
+    "Adds one or more `lane_reservation_entries` records to the collection"
+    insertIntolane_reservation_entriesCollection(objects: [lane_reservation_entriesInsertInput!]!): lane_reservation_entriesInsertResponse
+    "Adds one or more `lane_reservation_entries_logs` records to the collection"
+    insertIntolane_reservation_entries_logsCollection(objects: [lane_reservation_entries_logsInsertInput!]!): lane_reservation_entries_logsInsertResponse
+    "Adds one or more `lane_reservations` records to the collection"
+    insertIntolane_reservationsCollection(objects: [lane_reservationsInsertInput!]!): lane_reservationsInsertResponse
+    "Adds one or more `lane_reservations_payments` records to the collection"
+    insertIntolane_reservations_paymentsCollection(objects: [lane_reservations_paymentsInsertInput!]!): lane_reservations_paymentsInsertResponse
+    "Adds one or more `staffs` records to the collection"
+    insertIntostaffsCollection(objects: [staffsInsertInput!]!): staffsInsertResponse
+    "Updates zero or more records in the `bowling_lane_pricing` collection"
+    updatebowling_lane_pricingCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: bowling_lane_pricingFilter,
+        "Fields that are set will be updated for all records matching the `filter`"
+        set: bowling_lane_pricingUpdateInput!
+    ): bowling_lane_pricingUpdateResponse!
+    "Updates zero or more records in the `bowling_lanes` collection"
+    updatebowling_lanesCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: bowling_lanesFilter,
+        "Fields that are set will be updated for all records matching the `filter`"
+        set: bowling_lanesUpdateInput!
+    ): bowling_lanesUpdateResponse!
+    "Updates zero or more records in the `guests` collection"
+    updateguestsCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: guestsFilter,
+        "Fields that are set will be updated for all records matching the `filter`"
+        set: guestsUpdateInput!
+    ): guestsUpdateResponse!
+    "Updates zero or more records in the `guests_companies` collection"
+    updateguests_companiesCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: guests_companiesFilter,
+        "Fields that are set will be updated for all records matching the `filter`"
+        set: guests_companiesUpdateInput!
+    ): guests_companiesUpdateResponse!
+    "Updates zero or more records in the `guests_companies_contacts_information` collection"
+    updateguests_companies_contacts_informationCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: guests_companies_contacts_informationFilter,
+        "Fields that are set will be updated for all records matching the `filter`"
+        set: guests_companies_contacts_informationUpdateInput!
+    ): guests_companies_contacts_informationUpdateResponse!
+    "Updates zero or more records in the `guests_contacts_information` collection"
+    updateguests_contacts_informationCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: guests_contacts_informationFilter,
+        "Fields that are set will be updated for all records matching the `filter`"
+        set: guests_contacts_informationUpdateInput!
+    ): guests_contacts_informationUpdateResponse!
+    "Updates zero or more records in the `lane_reservation_entries` collection"
+    updatelane_reservation_entriesCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: lane_reservation_entriesFilter,
+        "Fields that are set will be updated for all records matching the `filter`"
+        set: lane_reservation_entriesUpdateInput!
+    ): lane_reservation_entriesUpdateResponse!
+    "Updates zero or more records in the `lane_reservation_entries_logs` collection"
+    updatelane_reservation_entries_logsCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: lane_reservation_entries_logsFilter,
+        "Fields that are set will be updated for all records matching the `filter`"
+        set: lane_reservation_entries_logsUpdateInput!
+    ): lane_reservation_entries_logsUpdateResponse!
+    "Updates zero or more records in the `lane_reservations` collection"
+    updatelane_reservationsCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: lane_reservationsFilter,
+        "Fields that are set will be updated for all records matching the `filter`"
+        set: lane_reservationsUpdateInput!
+    ): lane_reservationsUpdateResponse!
+    "Updates zero or more records in the `lane_reservations_payments` collection"
+    updatelane_reservations_paymentsCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: lane_reservations_paymentsFilter,
+        "Fields that are set will be updated for all records matching the `filter`"
+        set: lane_reservations_paymentsUpdateInput!
+    ): lane_reservations_paymentsUpdateResponse!
+    "Updates zero or more records in the `staffs` collection"
+    updatestaffsCollection(
+        "The maximum number of records in the collection permitted to be affected"
+        atMost: Int! = 1,
+        "Restricts the mutation's impact to records matching the criteria"
+        filter: staffsFilter,
+        "Fields that are set will be updated for all records matching the `filter`"
+        set: staffsUpdateInput!
+    ): staffsUpdateResponse!
+}
+
+type PageInfo {
+    endCursor: String
+    hasNextPage: Boolean!
+    hasPreviousPage: Boolean!
+    startCursor: String
+}
+
+"The root type for querying data"
+type Query {
+    "A pagable collection of type `bowling_lane_pricing`"
+    bowling_lane_pricingCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: bowling_lane_pricingFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [bowling_lane_pricingOrderBy!]
+    ): bowling_lane_pricingConnection
+    "A pagable collection of type `bowling_lanes`"
+    bowling_lanesCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: bowling_lanesFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [bowling_lanesOrderBy!]
+    ): bowling_lanesConnection
+    "A pagable collection of type `guests`"
+    guestsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: guestsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [guestsOrderBy!]
+    ): guestsConnection
+    "A pagable collection of type `guests_companies`"
+    guests_companiesCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: guests_companiesFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [guests_companiesOrderBy!]
+    ): guests_companiesConnection
+    "A pagable collection of type `guests_companies_contacts_information`"
+    guests_companies_contacts_informationCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: guests_companies_contacts_informationFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [guests_companies_contacts_informationOrderBy!]
+    ): guests_companies_contacts_informationConnection
+    "A pagable collection of type `guests_contacts_information`"
+    guests_contacts_informationCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: guests_contacts_informationFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [guests_contacts_informationOrderBy!]
+    ): guests_contacts_informationConnection
+    "A pagable collection of type `lane_reservation_entries`"
+    lane_reservation_entriesCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservation_entriesFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservation_entriesOrderBy!]
+    ): lane_reservation_entriesConnection
+    "A pagable collection of type `lane_reservation_entries_logs`"
+    lane_reservation_entries_logsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservation_entries_logsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservation_entries_logsOrderBy!]
+    ): lane_reservation_entries_logsConnection
+    "A pagable collection of type `lane_reservations`"
+    lane_reservationsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservationsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservationsOrderBy!]
+    ): lane_reservationsConnection
+    "A pagable collection of type `lane_reservations_payments`"
+    lane_reservations_paymentsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservations_paymentsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservations_paymentsOrderBy!]
+    ): lane_reservations_paymentsConnection
+    "Retrieve a record by its `ID`"
+    node(
+        "The record's `ID`"
+        nodeId: ID!
+    ): Node
+    "A pagable collection of type `staffs`"
+    staffsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: staffsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [staffsOrderBy!]
+    ): staffsConnection
+}
+
+type bowling_lane_pricing implements Node {
+    bowling_lane_pricing_id: Int!
+    date_added: Date!
+    league: Boolean
+    "Globally Unique Record Identifier"
+    nodeId: ID!
+    per_game: Boolean
+    per_hour: Boolean
+    price: String
+    public: Boolean
+}
+
+type bowling_lane_pricingConnection {
+    edges: [bowling_lane_pricingEdge!]!
+    pageInfo: PageInfo!
+}
+
+type bowling_lane_pricingDeleteResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [bowling_lane_pricing!]!
+}
+
+type bowling_lane_pricingEdge {
+    cursor: String!
+    node: bowling_lane_pricing!
+}
+
+type bowling_lane_pricingInsertResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [bowling_lane_pricing!]!
+}
+
+type bowling_lane_pricingUpdateResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [bowling_lane_pricing!]!
+}
+
+type bowling_lanes implements Node {
+    lane_id: BigInt!
+    lane_number: Int
+    lane_reservation_entriesCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservation_entriesFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservation_entriesOrderBy!]
+    ): lane_reservation_entriesConnection
+    lane_reservation_entries_logsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservation_entries_logsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservation_entries_logsOrderBy!]
+    ): lane_reservation_entries_logsConnection
+    "Globally Unique Record Identifier"
+    nodeId: ID!
+}
+
+type bowling_lanesConnection {
+    edges: [bowling_lanesEdge!]!
+    pageInfo: PageInfo!
+}
+
+type bowling_lanesDeleteResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [bowling_lanes!]!
+}
+
+type bowling_lanesEdge {
+    cursor: String!
+    node: bowling_lanes!
+}
+
+type bowling_lanesInsertResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [bowling_lanes!]!
+}
+
+type bowling_lanesUpdateResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [bowling_lanes!]!
+}
+
+type guests implements Node {
+    guest_company_id: Int
+    guest_first_name: String
+    guest_id: Int!
+    guest_last_name: String
+    guest_middle_name: String
+    guests_contacts_informationCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: guests_contacts_informationFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [guests_contacts_informationOrderBy!]
+    ): guests_contacts_informationConnection
+    lane_reservationsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservationsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservationsOrderBy!]
+    ): lane_reservationsConnection
+    "Globally Unique Record Identifier"
+    nodeId: ID!
+}
+
+type guestsConnection {
+    edges: [guestsEdge!]!
+    pageInfo: PageInfo!
+}
+
+type guestsDeleteResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests!]!
+}
+
+type guestsEdge {
+    cursor: String!
+    node: guests!
+}
+
+type guestsInsertResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests!]!
+}
+
+type guestsUpdateResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests!]!
+}
+
+type guests_companies implements Node {
+    guest_company_id: Int!
+    guest_company_name: String
+    guests_companies_contacts_informationCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: guests_companies_contacts_informationFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [guests_companies_contacts_informationOrderBy!]
+    ): guests_companies_contacts_informationConnection
+    "Globally Unique Record Identifier"
+    nodeId: ID!
+}
+
+type guests_companiesConnection {
+    edges: [guests_companiesEdge!]!
+    pageInfo: PageInfo!
+}
+
+type guests_companiesDeleteResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests_companies!]!
+}
+
+type guests_companiesEdge {
+    cursor: String!
+    node: guests_companies!
+}
+
+type guests_companiesInsertResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests_companies!]!
+}
+
+type guests_companiesUpdateResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests_companies!]!
+}
+
+type guests_companies_contacts_information implements Node {
+    guest_company_contact_email_address: String
+    guest_company_contact_fax: String
+    guest_company_contact_id: Int!
+    guest_company_contact_phone: String
+    guest_company_id: Int!
+    guests_companies: guests_companies
+    "Globally Unique Record Identifier"
+    nodeId: ID!
+}
+
+type guests_companies_contacts_informationConnection {
+    edges: [guests_companies_contacts_informationEdge!]!
+    pageInfo: PageInfo!
+}
+
+type guests_companies_contacts_informationDeleteResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests_companies_contacts_information!]!
+}
+
+type guests_companies_contacts_informationEdge {
+    cursor: String!
+    node: guests_companies_contacts_information!
+}
+
+type guests_companies_contacts_informationInsertResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests_companies_contacts_information!]!
+}
+
+type guests_companies_contacts_informationUpdateResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests_companies_contacts_information!]!
+}
+
+type guests_contacts_information implements Node {
+    guest_contact_email_address: String
+    guest_contact_fax: String
+    guest_contact_information_id: Int!
+    guest_contact_phone: String
+    guest_id: Int
+    guests: guests
+    "Globally Unique Record Identifier"
+    nodeId: ID!
+}
+
+type guests_contacts_informationConnection {
+    edges: [guests_contacts_informationEdge!]!
+    pageInfo: PageInfo!
+}
+
+type guests_contacts_informationDeleteResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests_contacts_information!]!
+}
+
+type guests_contacts_informationEdge {
+    cursor: String!
+    node: guests_contacts_information!
+}
+
+type guests_contacts_informationInsertResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests_contacts_information!]!
+}
+
+type guests_contacts_informationUpdateResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [guests_contacts_information!]!
+}
+
+type lane_reservation_entries implements Node {
+    bowling_lanes: bowling_lanes
+    entry_time_from: Time
+    entry_time_to: Time
+    lane_id: Int
+    lane_reservation_entries_logsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservation_entries_logsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservation_entries_logsOrderBy!]
+    ): lane_reservation_entries_logsConnection
+    lane_reservation_entry_id: Int!
+    lane_reservations: lane_reservations
+    "Globally Unique Record Identifier"
+    nodeId: ID!
+    reservation_id: Int!
+    staff_id: Int
+    staffs: staffs
+}
+
+type lane_reservation_entriesConnection {
+    edges: [lane_reservation_entriesEdge!]!
+    pageInfo: PageInfo!
+}
+
+type lane_reservation_entriesDeleteResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservation_entries!]!
+}
+
+type lane_reservation_entriesEdge {
+    cursor: String!
+    node: lane_reservation_entries!
+}
+
+type lane_reservation_entriesInsertResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservation_entries!]!
+}
+
+type lane_reservation_entriesUpdateResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservation_entries!]!
+}
+
+type lane_reservation_entries_logs implements Node {
+    bowling_lanes: bowling_lanes
+    entry_time_from: Time
+    entry_time_to: Time
+    lane_id: Int
+    lane_reservation_entries: lane_reservation_entries
+    lane_reservation_entries_logs_id: Int!
+    "Globally Unique Record Identifier"
+    nodeId: ID!
+    reservation_entry_id: Int
+    staff_id: Int
+    staffs: staffs
+    time_changed: Datetime!
+}
+
+type lane_reservation_entries_logsConnection {
+    edges: [lane_reservation_entries_logsEdge!]!
+    pageInfo: PageInfo!
+}
+
+type lane_reservation_entries_logsDeleteResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservation_entries_logs!]!
+}
+
+type lane_reservation_entries_logsEdge {
+    cursor: String!
+    node: lane_reservation_entries_logs!
+}
+
+type lane_reservation_entries_logsInsertResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservation_entries_logs!]!
+}
+
+type lane_reservation_entries_logsUpdateResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservation_entries_logs!]!
+}
+
+type lane_reservations implements Node {
+    active: Boolean!
+    detail: String
+    guest_id: Int
+    guests: guests
+    lane_reservation_entriesCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservation_entriesFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservation_entriesOrderBy!]
+    ): lane_reservation_entriesConnection
+    lane_reservations_paymentsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservations_paymentsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservations_paymentsOrderBy!]
+    ): lane_reservations_paymentsConnection
+    "Globally Unique Record Identifier"
+    nodeId: ID!
+    number_players: Int
+    removable: Boolean!
+    reservation_date: Date
+    reservation_id: Int!
+    staff_id: Int
+    staffs: staffs
+    time_added: Datetime!
+}
+
+type lane_reservationsConnection {
+    edges: [lane_reservationsEdge!]!
+    pageInfo: PageInfo!
+}
+
+type lane_reservationsDeleteResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservations!]!
+}
+
+type lane_reservationsEdge {
+    cursor: String!
+    node: lane_reservations!
+}
+
+type lane_reservationsInsertResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservations!]!
+}
+
+type lane_reservationsUpdateResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservations!]!
+}
+
+type lane_reservations_payments implements Node {
+    amount_payment: String
+    balance: Boolean
+    card_payment: Boolean!
+    deposit: Boolean
+    gift_card_payment: Boolean!
+    lane_reservations: lane_reservations
+    lane_reservations_payment_id: Int!
+    "Globally Unique Record Identifier"
+    nodeId: ID!
+    on_site_payment: Boolean!
+    reservation_id: Int
+    staff_id: Int
+    staffs: staffs
+    time_payment: Datetime!
+}
+
+type lane_reservations_paymentsConnection {
+    edges: [lane_reservations_paymentsEdge!]!
+    pageInfo: PageInfo!
+}
+
+type lane_reservations_paymentsDeleteResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservations_payments!]!
+}
+
+type lane_reservations_paymentsEdge {
+    cursor: String!
+    node: lane_reservations_payments!
+}
+
+type lane_reservations_paymentsInsertResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservations_payments!]!
+}
+
+type lane_reservations_paymentsUpdateResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [lane_reservations_payments!]!
+}
+
+type staffs implements Node {
+    lane_reservation_entriesCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservation_entriesFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservation_entriesOrderBy!]
+    ): lane_reservation_entriesConnection
+    lane_reservation_entries_logsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservation_entries_logsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservation_entries_logsOrderBy!]
+    ): lane_reservation_entries_logsConnection
+    lane_reservationsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservationsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservationsOrderBy!]
+    ): lane_reservationsConnection
+    lane_reservations_paymentsCollection(
+        "Query values in the collection after the provided cursor"
+        after: Cursor,
+        "Query values in the collection before the provided cursor"
+        before: Cursor,
+        "Filters to apply to the results set when querying from the collection"
+        filter: lane_reservations_paymentsFilter,
+        "Query the first `n` records in the collection"
+        first: Int,
+        "Query the last `n` records in the collection"
+        last: Int,
+        "Sort order to apply to the collection"
+        orderBy: [lane_reservations_paymentsOrderBy!]
+    ): lane_reservations_paymentsConnection
+    "Globally Unique Record Identifier"
+    nodeId: ID!
+    staff_email_address: String
+    staff_first_name: String
+    staff_id: Int!
+    staff_last_name: String
+    staff_middle_name: String
+    staff_phone: String
+}
+
+type staffsConnection {
+    edges: [staffsEdge!]!
+    pageInfo: PageInfo!
+}
+
+type staffsDeleteResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [staffs!]!
+}
+
+type staffsEdge {
+    cursor: String!
+    node: staffs!
+}
+
+type staffsInsertResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [staffs!]!
+}
+
+type staffsUpdateResponse {
+    "Count of the records impacted by the mutation"
+    affectedCount: Int!
+    "Array of records impacted by the mutation"
+    records: [staffs!]!
+}
+
+enum FilterIs {
+    NOT_NULL
+    NULL
+}
+
+"Defines a per-field sorting order"
+enum OrderByDirection {
+    "Ascending order, nulls first"
+    AscNullsFirst
+    "Ascending order, nulls last"
+    AscNullsLast
+    "Descending order, nulls first"
+    DescNullsFirst
+    "Descending order, nulls last"
+    DescNullsLast
+}
+
+scalar BigInt
+
+scalar Cursor
+
+scalar Date
+
+scalar Datetime
+
+scalar JSON
+
+scalar Time
+
+scalar UUID
+
+"Boolean expression comparing fields on type \"BigInt\""
+input BigIntFilter {
+    eq: BigInt
+    gt: BigInt
+    gte: BigInt
+    in: [BigInt!]
+    is: FilterIs
+    lt: BigInt
+    lte: BigInt
+    neq: BigInt
+}
+
+"Boolean expression comparing fields on type \"Boolean\""
+input BooleanFilter {
+    eq: Boolean
+    gt: Boolean
+    gte: Boolean
+    in: [Boolean!]
+    is: FilterIs
+    lt: Boolean
+    lte: Boolean
+    neq: Boolean
+}
+
+"Boolean expression comparing fields on type \"Date\""
+input DateFilter {
+    eq: Date
+    gt: Date
+    gte: Date
+    in: [Date!]
+    is: FilterIs
+    lt: Date
+    lte: Date
+    neq: Date
+}
+
+"Boolean expression comparing fields on type \"Datetime\""
+input DatetimeFilter {
+    eq: Datetime
+    gt: Datetime
+    gte: Datetime
+    in: [Datetime!]
+    is: FilterIs
+    lt: Datetime
+    lte: Datetime
+    neq: Datetime
+}
+
+"Boolean expression comparing fields on type \"Float\""
+input FloatFilter {
+    eq: Float
+    gt: Float
+    gte: Float
+    in: [Float!]
+    is: FilterIs
+    lt: Float
+    lte: Float
+    neq: Float
+}
+
+"Boolean expression comparing fields on type \"ID\""
+input IDFilter {
+    eq: ID
+}
+
+"Boolean expression comparing fields on type \"Int\""
+input IntFilter {
+    eq: Int
+    gt: Int
+    gte: Int
+    in: [Int!]
+    is: FilterIs
+    lt: Int
+    lte: Int
+    neq: Int
+}
+
+"Boolean expression comparing fields on type \"String\""
+input StringFilter {
+    eq: String
+    gt: String
+    gte: String
+    in: [String!]
+    is: FilterIs
+    lt: String
+    lte: String
+    neq: String
+}
+
+"Boolean expression comparing fields on type \"Time\""
+input TimeFilter {
+    eq: Time
+    gt: Time
+    gte: Time
+    in: [Time!]
+    is: FilterIs
+    lt: Time
+    lte: Time
+    neq: Time
+}
+
+"Boolean expression comparing fields on type \"UUID\""
+input UUIDFilter {
+    eq: UUID
+    in: [UUID!]
+    is: FilterIs
+    neq: UUID
+}
+
+input bowling_lane_pricingFilter {
+    bowling_lane_pricing_id: IntFilter
+    date_added: DateFilter
+    league: BooleanFilter
+    nodeId: IDFilter
+    per_game: BooleanFilter
+    per_hour: BooleanFilter
+    price: StringFilter
+    public: BooleanFilter
+}
+
+input bowling_lane_pricingInsertInput {
+    date_added: Date
+    league: Boolean
+    per_game: Boolean
+    per_hour: Boolean
+    price: String
+    public: Boolean
+}
+
+input bowling_lane_pricingOrderBy {
+    bowling_lane_pricing_id: OrderByDirection
+    date_added: OrderByDirection
+    league: OrderByDirection
+    per_game: OrderByDirection
+    per_hour: OrderByDirection
+    price: OrderByDirection
+    public: OrderByDirection
+}
+
+input bowling_lane_pricingUpdateInput {
+    date_added: Date
+    league: Boolean
+    per_game: Boolean
+    per_hour: Boolean
+    price: String
+    public: Boolean
+}
+
+input bowling_lanesFilter {
+    lane_id: BigIntFilter
+    lane_number: IntFilter
+    nodeId: IDFilter
+}
+
+input bowling_lanesInsertInput {
+    lane_number: Int
+}
+
+input bowling_lanesOrderBy {
+    lane_id: OrderByDirection
+    lane_number: OrderByDirection
+}
+
+input bowling_lanesUpdateInput {
+    lane_number: Int
+}
+
+input guestsFilter {
+    guest_company_id: IntFilter
+    guest_first_name: StringFilter
+    guest_id: IntFilter
+    guest_last_name: StringFilter
+    guest_middle_name: StringFilter
+    nodeId: IDFilter
+}
+
+input guestsInsertInput {
+    guest_company_id: Int
+    guest_first_name: String
+    guest_last_name: String
+    guest_middle_name: String
+}
+
+input guestsOrderBy {
+    guest_company_id: OrderByDirection
+    guest_first_name: OrderByDirection
+    guest_id: OrderByDirection
+    guest_last_name: OrderByDirection
+    guest_middle_name: OrderByDirection
+}
+
+input guestsUpdateInput {
+    guest_company_id: Int
+    guest_first_name: String
+    guest_last_name: String
+    guest_middle_name: String
+}
+
+input guests_companiesFilter {
+    guest_company_id: IntFilter
+    guest_company_name: StringFilter
+    nodeId: IDFilter
+}
+
+input guests_companiesInsertInput {
+    guest_company_name: String
+}
+
+input guests_companiesOrderBy {
+    guest_company_id: OrderByDirection
+    guest_company_name: OrderByDirection
+}
+
+input guests_companiesUpdateInput {
+    guest_company_name: String
+}
+
+input guests_companies_contacts_informationFilter {
+    guest_company_contact_email_address: StringFilter
+    guest_company_contact_fax: StringFilter
+    guest_company_contact_id: IntFilter
+    guest_company_contact_phone: StringFilter
+    guest_company_id: IntFilter
+    nodeId: IDFilter
+}
+
+input guests_companies_contacts_informationInsertInput {
+    guest_company_contact_email_address: String
+    guest_company_contact_fax: String
+    guest_company_contact_phone: String
+    guest_company_id: Int
+}
+
+input guests_companies_contacts_informationOrderBy {
+    guest_company_contact_email_address: OrderByDirection
+    guest_company_contact_fax: OrderByDirection
+    guest_company_contact_id: OrderByDirection
+    guest_company_contact_phone: OrderByDirection
+    guest_company_id: OrderByDirection
+}
+
+input guests_companies_contacts_informationUpdateInput {
+    guest_company_contact_email_address: String
+    guest_company_contact_fax: String
+    guest_company_contact_phone: String
+    guest_company_id: Int
+}
+
+input guests_contacts_informationFilter {
+    guest_contact_email_address: StringFilter
+    guest_contact_fax: StringFilter
+    guest_contact_information_id: IntFilter
+    guest_contact_phone: StringFilter
+    guest_id: IntFilter
+    nodeId: IDFilter
+}
+
+input guests_contacts_informationInsertInput {
+    guest_contact_email_address: String
+    guest_contact_fax: String
+    guest_contact_phone: String
+    guest_id: Int
+}
+
+input guests_contacts_informationOrderBy {
+    guest_contact_email_address: OrderByDirection
+    guest_contact_fax: OrderByDirection
+    guest_contact_information_id: OrderByDirection
+    guest_contact_phone: OrderByDirection
+    guest_id: OrderByDirection
+}
+
+input guests_contacts_informationUpdateInput {
+    guest_contact_email_address: String
+    guest_contact_fax: String
+    guest_contact_phone: String
+    guest_id: Int
+}
+
+input lane_reservation_entriesFilter {
+    entry_time_from: TimeFilter
+    entry_time_to: TimeFilter
+    lane_id: IntFilter
+    lane_reservation_entry_id: IntFilter
+    nodeId: IDFilter
+    reservation_id: IntFilter
+    staff_id: IntFilter
+}
+
+input lane_reservation_entriesInsertInput {
+    entry_time_from: Time
+    entry_time_to: Time
+    lane_id: Int
+    reservation_id: Int
+    staff_id: Int
+}
+
+input lane_reservation_entriesOrderBy {
+    entry_time_from: OrderByDirection
+    entry_time_to: OrderByDirection
+    lane_id: OrderByDirection
+    lane_reservation_entry_id: OrderByDirection
+    reservation_id: OrderByDirection
+    staff_id: OrderByDirection
+}
+
+input lane_reservation_entriesUpdateInput {
+    entry_time_from: Time
+    entry_time_to: Time
+    lane_id: Int
+    reservation_id: Int
+    staff_id: Int
+}
+
+input lane_reservation_entries_logsFilter {
+    entry_time_from: TimeFilter
+    entry_time_to: TimeFilter
+    lane_id: IntFilter
+    lane_reservation_entries_logs_id: IntFilter
+    nodeId: IDFilter
+    reservation_entry_id: IntFilter
+    staff_id: IntFilter
+    time_changed: DatetimeFilter
+}
+
+input lane_reservation_entries_logsInsertInput {
+    entry_time_from: Time
+    entry_time_to: Time
+    lane_id: Int
+    reservation_entry_id: Int
+    staff_id: Int
+    time_changed: Datetime
+}
+
+input lane_reservation_entries_logsOrderBy {
+    entry_time_from: OrderByDirection
+    entry_time_to: OrderByDirection
+    lane_id: OrderByDirection
+    lane_reservation_entries_logs_id: OrderByDirection
+    reservation_entry_id: OrderByDirection
+    staff_id: OrderByDirection
+    time_changed: OrderByDirection
+}
+
+input lane_reservation_entries_logsUpdateInput {
+    entry_time_from: Time
+    entry_time_to: Time
+    lane_id: Int
+    reservation_entry_id: Int
+    staff_id: Int
+    time_changed: Datetime
+}
+
+input lane_reservationsFilter {
+    active: BooleanFilter
+    detail: StringFilter
+    guest_id: IntFilter
+    nodeId: IDFilter
+    number_players: IntFilter
+    removable: BooleanFilter
+    reservation_date: DateFilter
+    reservation_id: IntFilter
+    staff_id: IntFilter
+    time_added: DatetimeFilter
+}
+
+input lane_reservationsInsertInput {
+    active: Boolean
+    detail: String
+    guest_id: Int
+    number_players: Int
+    removable: Boolean
+    reservation_date: Date
+    staff_id: Int
+    time_added: Datetime
+}
+
+input lane_reservationsOrderBy {
+    active: OrderByDirection
+    detail: OrderByDirection
+    guest_id: OrderByDirection
+    number_players: OrderByDirection
+    removable: OrderByDirection
+    reservation_date: OrderByDirection
+    reservation_id: OrderByDirection
+    staff_id: OrderByDirection
+    time_added: OrderByDirection
+}
+
+input lane_reservationsUpdateInput {
+    active: Boolean
+    detail: String
+    guest_id: Int
+    number_players: Int
+    removable: Boolean
+    reservation_date: Date
+    staff_id: Int
+    time_added: Datetime
+}
+
+input lane_reservations_paymentsFilter {
+    amount_payment: StringFilter
+    balance: BooleanFilter
+    card_payment: BooleanFilter
+    deposit: BooleanFilter
+    gift_card_payment: BooleanFilter
+    lane_reservations_payment_id: IntFilter
+    nodeId: IDFilter
+    on_site_payment: BooleanFilter
+    reservation_id: IntFilter
+    staff_id: IntFilter
+    time_payment: DatetimeFilter
+}
+
+input lane_reservations_paymentsInsertInput {
+    amount_payment: String
+    balance: Boolean
+    card_payment: Boolean
+    deposit: Boolean
+    gift_card_payment: Boolean
+    on_site_payment: Boolean
+    reservation_id: Int
+    staff_id: Int
+    time_payment: Datetime
+}
+
+input lane_reservations_paymentsOrderBy {
+    amount_payment: OrderByDirection
+    balance: OrderByDirection
+    card_payment: OrderByDirection
+    deposit: OrderByDirection
+    gift_card_payment: OrderByDirection
+    lane_reservations_payment_id: OrderByDirection
+    on_site_payment: OrderByDirection
+    reservation_id: OrderByDirection
+    staff_id: OrderByDirection
+    time_payment: OrderByDirection
+}
+
+input lane_reservations_paymentsUpdateInput {
+    amount_payment: String
+    balance: Boolean
+    card_payment: Boolean
+    deposit: Boolean
+    gift_card_payment: Boolean
+    on_site_payment: Boolean
+    reservation_id: Int
+    staff_id: Int
+    time_payment: Datetime
+}
+
+input staffsFilter {
+    nodeId: IDFilter
+    staff_email_address: StringFilter
+    staff_first_name: StringFilter
+    staff_id: IntFilter
+    staff_last_name: StringFilter
+    staff_middle_name: StringFilter
+    staff_phone: StringFilter
+}
+
+input staffsInsertInput {
+    staff_email_address: String
+    staff_first_name: String
+    staff_last_name: String
+    staff_middle_name: String
+    staff_phone: String
+}
+
+input staffsOrderBy {
+    staff_email_address: OrderByDirection
+    staff_first_name: OrderByDirection
+    staff_id: OrderByDirection
+    staff_last_name: OrderByDirection
+    staff_middle_name: OrderByDirection
+    staff_phone: OrderByDirection
+}
+
+input staffsUpdateInput {
+    staff_email_address: String
+    staff_first_name: String
+    staff_last_name: String
+    staff_middle_name: String
+    staff_phone: String
+}

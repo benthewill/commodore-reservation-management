@@ -1,0 +1,62 @@
+query getAllReservations {
+    lane_reservationsCollection {
+        edges {
+            node {
+                reservation_date
+                time_added
+                staffs{
+                    staff_first_name
+                    staff_middle_name
+                }
+                lane_reservations_paymentsCollection{
+                    edges{
+                        node{
+                            deposit
+                            balance
+                            amount_payment
+                            card_payment
+                            time_payment
+                            on_site_payment
+                            gift_card_payment
+                            time_payment
+                            staffs{
+                                staff_first_name
+                                staff_middle_name
+                                staff_last_name
+                            }
+                        }
+                    }
+                }
+                guests {
+                    guest_first_name
+                    guest_middle_name
+                    guest_last_name
+                    guests_contacts_informationCollection {
+                        edges {
+                            node {
+                                guest_contact_phone
+                                guest_contact_fax
+                                guest_contact_email_address
+                            }
+                        }
+                    }
+                }
+                lane_reservation_entriesCollection {
+                    edges {
+                        node {
+                            bowling_lanes {
+                                lane_number
+                            }
+                            entry_time_from
+                            entry_time_to
+                        }
+                    }
+                }
+                number_players
+                detail
+                active
+                removable
+            }
+        }
+    }
+}
