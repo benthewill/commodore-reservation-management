@@ -3,19 +3,16 @@ import {GraphQLClient, gql} from "graphql-request";
 export default defineEventHandler(() => {
     async function main() {
 
-        const endpoint = "https://czijnqyhctdhujaocoev.supabase.co/graphql/v1"
-        const graphQLClient = new GraphQLClient(endpoint, {
-            headers: {
-                apiKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6aWpucXloY3RkaHVqYW9jb2V2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODQwNTQ1NywiZXhwIjoxOTkzOTgxNDU3fQ.FzD8X4hyGjTOdI3Lwp5EMxjP7Yo-mvUrTVJZOoJAxRQ",
-                authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6aWpucXloY3RkaHVqYW9jb2V2Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3ODQwNTQ1NywiZXhwIjoxOTkzOTgxNDU3fQ.FzD8X4hyGjTOdI3Lwp5EMxjP7Yo-mvUrTVJZOoJAxRQ"
-            }
-        })
+        const {endpoint, headers} = useRuntimeConfig()
+
+        const graphQLClient = new GraphQLClient(endpoint, {headers})
 
         const getAllReservations = gql`
             query getAllReservations ($after: Cursor){
                 lane_reservationsCollection (after: $after) {
                     edges {
                         node {
+                            reservation_id
                             reservation_date
                             time_added
                             staffs{
