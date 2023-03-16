@@ -55,6 +55,7 @@ export default defineEventHandler(() => {
                             lane_reservation_entriesCollection {
                                 edges {
                                     node {
+                                        reservation_id
                                         bowling_lanes {
                                             lane_number
                                         }
