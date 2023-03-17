@@ -46,18 +46,30 @@
 <!--      Amount: {{amount}}-->
 <!--    </p>-->
     <div class="grid grid-flow-col auto-cols-auto h-full">
+      <div class="flex flex-col w-full">
+        <div class="flex-none text-center"><p>Hours</p></div>
+        <div class=" grow bg-slate-400 ">
+          <div class="flex flex-col h-full">
+            <div
+                v-for="x in [8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"
+                class="flex-auto border-[0.5px] border-slate-200/50 bg-white">
+              {{x}}
+
+            </div>
+          </div>
+        </div>
+      </div>
       <res-board-lane-column v-for="lane in lanesData.bowling_lanesCollection.edges"  :lane-num="lane.node.lane_number" :key="lane.node.lane_number">
         <template #content>
           <div class="absolute h-full w-full">
             <div v-for="entry in allReservations.filterDataByEntries">
-              <div v-if="entry.bowling_lanes.lane_number === lane.node.lane_number" class="pb-20">
+              <div v-if="entry.bowling_lanes.lane_number === lane.node.lane_number" :style="{top: (Number(entry.entry_time_from.replaceAll(':', '')) /100) + 'px'}" class="absolute inset-x-0">
                 <div
                     class="border-y-indigo-500 border-2"
-                    :class="{'border-l-indigo-500 ml-1' : entry.leftMost, 'border-r-indigo-500 mr-1' : entry.rightMost}"
+                    :class="[{'border-l-indigo-500 ml-1' : entry.leftMost, 'border-r-indigo-500 mr-1' : entry.rightMost}]"
+                    :style="{height:((Number(entry.entry_time_to.replaceAll(':', '')) /100) - (Number(entry.entry_time_from.replaceAll(':', '')) /100)) + 'px'}"
                 >
-                  <p class="text-xs">ID: {{entry.reservation_id}}</p>
-                  <p class="text-xs">Time From: {{entry.entry_time_from}}</p>
-                  <p class="text-xs">Time To: {{entry.entry_time_to}}</p>
+                  <p class="text-xs">ID: {{entry.reservation_id}} Time: {{entry.entry_time_from.substr(0,5)}} to {{entry.entry_time_to.substr(0,5)}}</p>
                 </div>
               </div>
             </div>

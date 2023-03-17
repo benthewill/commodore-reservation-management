@@ -5,7 +5,6 @@
   <div class="flex flex-col w-full">
     <div class="flex-none text-center"><p>Lane #{{laneNum}}</p></div>
     <div class="relative grow bg-slate-400 ">
-
       <div class="absolute w-full h-full" >
         <slot name="content"></slot>
       </div>

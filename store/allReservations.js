@@ -37,16 +37,6 @@ export const storeAllReservations = defineStore('allReservations', {
                 }
             )
 
-            // const convertArrayToObject = (array, key) =>
-            //     array.reduce((acc, curr) => {
-            //         acc[curr[key]] = curr;
-            //         return acc;
-            //     }, {});
-            //
-            // let objConverted = convertArrayToObject(objCleanResEntrySorted, "reservation_id")
-            //
-            // console.log(JSON.stringify(objConverted))
-
             let addDetails = objCleanResEntrySorted.map(item => item.entries.map((entry,index) => {
                 return {
                     ...entry,
@@ -54,8 +44,30 @@ export const storeAllReservations = defineStore('allReservations', {
                     rightMost: index === item.entries.length - 1
                 }
             }))
+            // console.log(JSON.stringify(addDetails))
 
-            let flat = addDetails.flat()
+            let grouping = addDetails.map((item ) => {
+                let props = []
+
+                item.forEach((entry, index) => {
+                    if (item.length > 1 && index !== 0 && item[index].bowling_lanes.lane_number - item[index - 1].bowling_lanes.lane_number !== 1) {
+                        props.push({indx: index, position: "leftMost"})
+                        props.push({indx: index-1, position: "rightMost"})
+                    }
+                })
+
+                console.log(JSON.stringify(props))
+
+                props.forEach((prop) => {
+                    item[prop.indx][prop.position] = true
+                })
+
+                return item
+            })
+
+            console.log(JSON.stringify(grouping))
+
+            let flat = grouping.flat()
 
             return flat
         }
