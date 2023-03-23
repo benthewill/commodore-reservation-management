@@ -2,6 +2,7 @@
   import {storeToRefs} from "pinia";
   import {storeAllReservations} from "../store/allReservations";
   import {storeView} from "../store/viewStore";
+  import timeScaleConversion from "../composables/timeScaleConversion";
   const reqAllLanes = async () => {
     return await $fetch('/api/fetchAllLanes').then(x => x)
   }
@@ -14,6 +15,7 @@
   const {amount} = storeToRefs(storeView())
   const viewStore = storeView()
 
+  const timeScale = (x) => timeScaleConversion(x)
 
   allReservations.filterByDate(viewStore.selectDate)
 
@@ -63,7 +65,7 @@
         <template #content>
           <div class="absolute h-full w-full">
             <div v-for="entry in allReservations.filterDataByEntries">
-              <div v-if="entry.bowling_lanes.lane_number === lane.node.lane_number" :style="{top: (((Number(entry.entry_time_from.replaceAll(':', '')) /100) - 800) * 93.75) / 1600 + '%'}" class="absolute inset-x-0">
+              <div v-if="entry.bowling_lanes.lane_number === lane.node.lane_number" :style="{top: timeScale(entry.entry_time_from) + '%'}" class="absolute inset-x-0">
                 <div
                     class="border-y-indigo-500 border-2"
                     :class="[{'border-l-indigo-500 ml-1' : entry.leftMost, 'border-r-indigo-500 mr-1' : entry.rightMost}]"
