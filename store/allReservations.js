@@ -65,10 +65,11 @@ export const storeAllReservations = defineStore('allReservations', {
                 return item
             })
 
-            console.log(JSON.stringify(grouping))
+            // console.log(JSON.stringify(grouping))
 
             let flat = grouping.flat()
 
+            console.log(JSON.stringify(flat))
             return flat
         }
     },

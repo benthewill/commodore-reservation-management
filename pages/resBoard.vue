@@ -38,15 +38,6 @@
     {{viewStore.selectDate}}
     <button @click="prev">Previous Day</button>
     <button @click="next">Next Day</button>
-<!--    <p class="text-xs">-->
-<!--      {{filteredData}}-->
-<!--    </p>-->
-<!--    <p class="text-xs text-lime-700">-->
-<!--      {{allReservations.filterDataByEntries}}-->
-<!--    </p>-->
-<!--    <p>-->
-<!--      Amount: {{amount}}-->
-<!--    </p>-->
     <div class="grid grid-flow-col auto-cols-auto h-full">
       <div class="flex flex-col w-full">
         <div class="flex-none text-center"><p>Hours</p></div>
@@ -67,8 +58,8 @@
             <div v-for="entry in allReservations.filterDataByEntries">
               <div v-if="entry.bowling_lanes.lane_number === lane.node.lane_number" :style="{top: timeScale(entry.entry_time_from) + '%'}" class="absolute inset-x-0">
                 <div
-                    class="border-y-indigo-500 border-2"
-                    :class="[{'border-l-indigo-500 ml-1' : entry.leftMost, 'border-r-indigo-500 mr-1' : entry.rightMost}]"
+                    class="border-y-indigo-500 border-[1px]"
+                    :class="[{'border-l-indigo-500 ml-1' : entry.leftMost, 'border-r-0' : entry.leftMost && !entry.rightMost, 'border-r-indigo-500 mr-1' : entry.rightMost, 'border-l-0': entry.rightMost && !entry.leftMost}]"
                     :style="{height:((Number(entry.entry_time_to.replaceAll(':', '')) /100) - (Number(entry.entry_time_from.replaceAll(':', '')) /100)) + 'px'}"
                 >
                   <p class="text-xs">ID: {{entry.reservation_id}} Time: {{entry.entry_time_from.substr(0,5)}} to {{entry.entry_time_to.substr(0,5)}}</p>
